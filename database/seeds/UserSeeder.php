@@ -12,6 +12,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        // create the main user
         $hasher = app()->make('hash');
         $password = $hasher->make('user@123');
         $api_token = sha1(time());
@@ -22,5 +23,8 @@ class UserSeeder extends Seeder
             'password' => $password,
             'api_token' => $api_token,
         ]);
+
+        // create 10 more users using the user factory
+        factory(App\User::class, 10)->create();
     }
 }

@@ -18,7 +18,8 @@ $router->get('/', function () use ($router) {
     ]);
 });
 
-$router->post('/login', 'LoginController@index');
+$router->post('/login', 'LoginController@index'); // General access token
+$router->post('/auth', 'LoginController@authenticate'); // JWT based access token
 $router->post('/register', 'UserController@register');
 $router->get('/user/{id}', ['middleware' => 'auth', 'uses' => 'UserController@getUser']);
 
