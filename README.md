@@ -1,21 +1,41 @@
-# Lumen PHP Framework
+ # A simple lumen based API for user register, login, CRUD books, CRUD categories
+ 
+ INSTRUCTIONS 
+ 
+ update the .env file 
+ 
+ `DB_PORT=3306`
+ 
+ `DB_DATABASE=Homestead`
+ 
+ `DB_USERNAME=root`
+ 
+ `DB_PASSWORD=`
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/lumen-framework/v/unstable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+ Run following commands
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+ `composer install`
+ 
+ `php artisan migrate`
+ 
+ `php artisan db:seed`
+ 
+ Now to run the application using in built server
 
-## Official Documentation
+ `php -S localhost:8000 -t public`
 
-Documentation for the framework can be found on the [Lumen website](http://lumen.laravel.com/docs).
+ API endpoints
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Lumen framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+ http://localhost:8080/login (Generated Token)
+ 
+ http://localhost:8080/auth (JWT token) 
+ 
+ http://localhost:8080/register
+ 
+ http://localhost:8080/book?api_token=c93361db6a6c607d4dcff1e2c777906521cc932d
+ 
+ http://localhost:8080/book/1?api_token=c93361db6a6c607d4dcff1e2c777906521cc932d
+ 
+ http://localhost:8080/category?api_token=c93361db6a6c607d4dcff1e2c777906521cc932d
+ 
+ http://localhost:8080/category/1?api_token=c93361db6a6c607d4dcff1e2c777906521cc932d
