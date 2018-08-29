@@ -22,6 +22,7 @@ $router->post('/login', 'LoginController@index'); // General access token
 $router->post('/auth', 'LoginController@authenticate'); // JWT based access token
 $router->post('/register', 'UserController@register');
 $router->get('/user/{id}', ['middleware' => 'auth', 'uses' => 'UserController@getUser']);
+//$router->get('/user/{id}', ['middleware' => 'jwt.auth', 'uses' => 'UserController@getUser']);
 
 $router->get('/category', 'CategoryController@index');
 $router->post('/category/create', 'CategoryController@create');
